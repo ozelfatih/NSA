@@ -1,2 +1,8 @@
-# NetworkScannerAudit
-Sistemin bağlı bulunduğu ağdaki bütün bilgisayarların port, işletim sistemi, sistem açık mı? Değil mi? vs. durumlarını listelemek
+## Network Scanner Audit
+
+### Özellikleri
+
+* Aktif bilgisayarları tespit etmek
+* Port durumlarının analizi
+* İşletim sistemlerinin tipi (windows, linux, firewall)
+
