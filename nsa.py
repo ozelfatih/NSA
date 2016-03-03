@@ -1,1 +1,1 @@
-
+#düzenleme yapıldı
