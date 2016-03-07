@@ -1,2 +1,3 @@
-#düzenleme yapıldı
-peki
+
+import scapy
+
