@@ -3,7 +3,7 @@
 ### Özellikleri
 
 * Aktif bilgisayarları tespit etmek
-* Port durumlarının analizi
+* Port durumlarının analizi (openPorts, closedPorts, filteredPorts)
 * İşletim sistemlerinin tipi (windows, linux, firewall)
 
 ###Kaynaklar
