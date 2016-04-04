@@ -5,13 +5,9 @@ from scapy.all import *
 import sys, os
 import socket
 
-
-
-
 conf.verb=0 #disables scapy default verbose mode
 
 #logging.getLogger("scapy.runtime").setLevel(logging.ERROR) #disables 'No route found for IPv6 destination' warning
-
 
 t_wait=.25 #timeout for the answer to each packet
 openPorts = [] #holds the open ports to show as a summary
@@ -52,7 +48,6 @@ def synScan(tgt, bP, eP):
         print ("[+] %d Open" % port)
 
 synScan(tgt,bP,eP)
-
 
 """
 #try1
