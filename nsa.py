@@ -5,14 +5,24 @@ from scapy.all import *
 import sys, os
 import socket
 
+#####################################################
+# ICMP Kodları (Type 3)                             #
+# 1  Host Ulaşılamaz                                #
+# 2  Protocol Ulaşılamaz                            #
+# 3  Port Ulaşılamaz                                #
+# 9  Hedefdeki ağ yönetici tarafından yasaklanmış   #
+# 10 Hedefteki host yönetici tarafından yasaklanmış #
+# 13 Bağlantı yönetici tarafından yasaklanmış       #
+#####################################################
+
 conf.verb=0 #disables scapy default verbose mode
 
 #logging.getLogger("scapy.runtime").setLevel(logging.ERROR) #disables 'No route found for IPv6 destination' warning
 
-t_wait=.25 #timeout for the answer to each packet
-openPorts = [] #holds the open ports to show as a summary
-closedPorts = [] #holds the closed ports to show as a summary
-filteredPorts = [] #holds the filtered ports to show as a summary
+t_wait=.25 #Her bir paketin cevap beklenme süresi
+openPorts = [] #Açık portlar
+closedPorts = [] #Kapalı portlar
+filteredPorts = [] #Filtrelenmiş portlar
 
 tgt = input("Destination IP: ")
 bP = int(input("Start Port: "))
@@ -48,13 +58,3 @@ def synScan(tgt, bP, eP):
         print ("[+] %d Open" % port)
 
 synScan(tgt,bP,eP)
-
-"""
-#try1
-
-from scapy.all import *
-
-ans, unans = sr(IP(dst="10.99.5.22")/TCP(sport=4444, dport=[135, 445, 8080, 443, 80, 1433], flags="S"))
-
-ans.summary(lambda s,r: r.sprintf("TCP: {0} %TCP.sport% ----------------> %TCP.flags%".format(str(r[TCP].sport))))
-"""
